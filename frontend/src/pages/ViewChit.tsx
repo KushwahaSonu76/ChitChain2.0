@@ -3,6 +3,7 @@ import { useParams, Link } from 'react-router-dom';
 import { useWallet } from '../lib/wallet/WalletContext';
 import { getChitStatus, contributeTx, disburseTx, getRoundContributions, type ChitStatus } from '../lib/contract/soroban';
 import posthog from 'posthog-js';
+import { submitFeedback } from '../lib/supabase';
 
 const ViewChit = () => {
   const { id } = useParams<{ id: string }>();
@@ -12,6 +13,8 @@ const ViewChit = () => {
   const [loading, setLoading] = useState(true);
   const [actionLoading, setActionLoading] = useState(false);
   const [error, setError] = useState('');
+  const [feedback, setFeedback] = useState('');
+  const [feedbackSubmitting, setFeedbackSubmitting] = useState(false);
 
   useEffect(() => {
     if (id) {
@@ -174,7 +177,7 @@ const ViewChit = () => {
         </div>
       </div>
       
-      {/* Feedback Widget Stub */}
+      {/* Feedback Widget */}
       <div className="bg-white p-6 rounded-xl border border-gray-100 shadow-sm mt-8">
         <h3 className="text-lg font-bold text-stellar mb-2">How was your experience?</h3>
         <p className="text-sm text-gray-500 mb-4">Help us improve ChitChain by providing your feedback.</p>
@@ -182,15 +185,30 @@ const ViewChit = () => {
           className="w-full border border-gray-300 rounded-lg p-3 text-sm mb-3 outline-none focus:border-accent"
           placeholder="It was easy to use..."
           rows={3}
+          value={feedback}
+          onChange={(e) => setFeedback(e.target.value)}
+          disabled={feedbackSubmitting}
         />
         <button 
-          className="bg-stellar text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-stellar/90"
-          onClick={() => {
-            alert("Feedback saved to Supabase!");
-            posthog.capture('feedback_submitted');
+          className="bg-stellar text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-stellar/90 disabled:opacity-50"
+          onClick={async () => {
+            if (!feedback.trim()) return;
+            try {
+              setFeedbackSubmitting(true);
+              await submitFeedback(address || 'Anonymous', feedback);
+              posthog.capture('feedback_submitted', { address, feedback });
+              alert("Feedback successfully submitted!");
+              setFeedback('');
+            } catch (e) {
+              console.error(e);
+              alert("Failed to submit feedback.");
+            } finally {
+              setFeedbackSubmitting(false);
+            }
           }}
+          disabled={feedbackSubmitting || !feedback.trim()}
         >
-          Submit Feedback
+          {feedbackSubmitting ? 'Submitting...' : 'Submit Feedback'}
         </button>
       </div>
     </div>
