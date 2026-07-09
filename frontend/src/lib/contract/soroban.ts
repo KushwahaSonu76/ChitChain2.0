@@ -188,16 +188,16 @@ export async function getChitStatus(chitId: number): Promise<ChitStatus> {
 
 export async function getMemberChits(address: string): Promise<ChitStatus[]> {
   const chits: ChitStatus[] = [];
-  // Scan contracts from 1 up to 25 to avoid long loading times for MVP demo
-  for (let i = 1; i <= 25; i++) {
+  // Scan sequentially starting from ID 1 until we hit the first non-existent group
+  for (let i = 1; i <= 200; i++) {
     try {
       const status = await getChitStatus(i);
       if (status.members.includes(address)) {
         chits.push(status);
       }
     } catch (e) {
-      // Contract not found or failed, continue scanning other IDs
-      continue;
+      // First non-existent ID reached, safe to break sequential scan
+      break;
     }
   }
   return chits;
