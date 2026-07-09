@@ -169,7 +169,7 @@ We collected 10 real responses via the in-app feedback widget stored in Supabase
 ### Mobile Responsive Design
 ![mobile](./image-1.png)
 ### Analytics/Monitoring Dashboard
-![analytics](./screenshots/analytics-dashboard.png)
+![analytics](./image-2.png)
 
 ---
 
