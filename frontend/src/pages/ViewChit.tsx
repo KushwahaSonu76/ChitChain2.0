@@ -104,13 +104,23 @@ const ViewChit = () => {
     <div className="max-w-3xl mx-auto space-y-8">
       <div className="flex justify-between items-end">
         <div>
-          <Link to="/dashboard" className="text-accent hover:underline text-sm font-medium mb-2 inline-block">
-            &larr; Back to Dashboard
+          <Link to="/dashboard" className="text-accent hover:text-accent/80 transition-colors text-sm font-medium mb-2 inline-flex items-center space-x-1">
+            <span>&larr;</span> <span>Back to Dashboard</span>
           </Link>
           <h1 className="text-3xl font-bold text-stellar">Group #{chit.id}</h1>
         </div>
-        <div className="bg-blue-100 text-blue-800 px-4 py-2 rounded-lg font-medium">
-          Round {chit.current_round} of {chit.total_rounds}
+        <div className="flex items-center space-x-3">
+          <button 
+            onClick={loadChit}
+            disabled={actionLoading}
+            className="bg-gray-100 hover:bg-gray-200 text-gray-700 px-3 py-2 rounded-lg font-medium transition-colors text-sm flex items-center space-x-1"
+            title="Refresh Group Data"
+          >
+            <span>🔄</span> <span>Refresh</span>
+          </button>
+          <div className="bg-blue-100 text-blue-800 px-4 py-2 rounded-lg font-medium">
+            Round {chit.current_round} of {chit.total_rounds}
+          </div>
         </div>
       </div>
 
