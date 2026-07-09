@@ -1,4 +1,4 @@
-import { rpc, Contract, Address, nativeToScVal, scValToNative, xdr, TransactionBuilder, BASE_FEE, TimeoutInfinite } from '@stellar/stellar-sdk';
+import { rpc, Contract, Address, Account, nativeToScVal, scValToNative, xdr, TransactionBuilder, BASE_FEE, TimeoutInfinite } from '@stellar/stellar-sdk';
 import { StellarWalletsKit } from '@creit.tech/stellar-wallets-kit';
 
 export const RPC_URL = 'https://soroban-testnet.stellar.org';
@@ -151,7 +151,7 @@ export async function getChitStatus(chitId: number): Promise<ChitStatus> {
 
   const contract = new Contract(CONTRACT_ID);
   const tx = new TransactionBuilder(
-    new rpc.Account("GAAAAAAAACCC12345678901234567890123456789012345678901234", "0"),
+    new Account("GBB35PEWHYNQJP2YFJ4RAQE7M4DJ2HT64EBKO6CT242K27BWOBAFT22K", "0"),
     {
       fee: BASE_FEE,
       networkPassphrase: NETWORK_PASSPHRASE,
