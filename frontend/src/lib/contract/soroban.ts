@@ -202,3 +202,38 @@ export async function getMemberChits(address: string): Promise<ChitStatus[]> {
   }
   return chits;
 }
+
+export async function getRoundContributions(chitId: number, round: number): Promise<Record<string, boolean>> {
+  if (!CONTRACT_ID) throw new Error("Contract ID not configured");
+
+  const contract = new Contract(CONTRACT_ID);
+  const tx = new TransactionBuilder(
+    new Account("GBB35PEWHYNQJP2YFJ4RAQE7M4DJ2HT64EBKO6CT242K27BWOBAFT22K", "0"),
+    {
+      fee: BASE_FEE,
+      networkPassphrase: NETWORK_PASSPHRASE,
+    }
+  )
+    .addOperation(contract.call(
+      "get_round_contributions",
+      nativeToScVal(chitId, { type: 'u32' }),
+      nativeToScVal(round, { type: 'u32' })
+    ))
+    .setTimeout(TimeoutInfinite)
+    .build();
+
+  const simulated = await server.simulateTransaction(tx);
+  if (rpc.Api.isSimulationError(simulated)) {
+    throw new Error('Simulation failed: ' + simulated.error);
+  }
+
+  if (!rpc.Api.isSimulationSuccess(simulated)) {
+    throw new Error('Simulation failed with unexpected response');
+  }
+
+  const scVal = simulated.result?.retval;
+  if (!scVal) return {};
+
+  const native = scValToNative(scVal);
+  return native || {};
+}

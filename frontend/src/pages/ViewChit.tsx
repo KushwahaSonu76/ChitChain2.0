@@ -1,13 +1,14 @@
 import { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { useWallet } from '../lib/wallet/WalletContext';
-import { getChitStatus, contributeTx, disburseTx, type ChitStatus } from '../lib/contract/soroban';
+import { getChitStatus, contributeTx, disburseTx, getRoundContributions, type ChitStatus } from '../lib/contract/soroban';
 import posthog from 'posthog-js';
 
 const ViewChit = () => {
   const { id } = useParams<{ id: string }>();
   const { address, kit } = useWallet();
   const [chit, setChit] = useState<ChitStatus | null>(null);
+  const [contributions, setContributions] = useState<Record<string, boolean>>({});
   const [loading, setLoading] = useState(true);
   const [actionLoading, setActionLoading] = useState(false);
   const [error, setError] = useState('');
@@ -21,8 +22,18 @@ const ViewChit = () => {
   const loadChit = async () => {
     try {
       setLoading(true);
-      const status = await getChitStatus(parseInt(id!));
+      const chitId = parseInt(id!);
+      const status = await getChitStatus(chitId);
       setChit(status);
+
+      // Fetch actual contributions for current round
+      try {
+        const roundConts = await getRoundContributions(chitId, status.current_round);
+        setContributions(roundConts);
+      } catch (e) {
+        console.error("Failed to load contributions status", e);
+      }
+
       setLoading(false);
     } catch (err: any) {
       console.error(err);
@@ -127,10 +138,10 @@ const ViewChit = () => {
           <div className="mt-6 pt-6 border-t border-gray-100 space-y-3">
             <button
               onClick={handleContribute}
-              disabled={actionLoading || !address}
+              disabled={actionLoading || !address || (address ? !!contributions[address] : false)}
               className="w-full bg-accent hover:bg-accent/90 text-white font-medium py-2 rounded-lg transition-colors disabled:opacity-50"
             >
-              {actionLoading ? 'Processing...' : 'Make Contribution'}
+              {actionLoading ? 'Processing...' : (address && contributions[address] ? 'Already Contributed' : 'Make Contribution')}
             </button>
             <button
               onClick={handleDisburse}
@@ -145,18 +156,20 @@ const ViewChit = () => {
         <div className="bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
           <h3 className="text-lg font-bold text-stellar mb-4">Members</h3>
           <ul className="space-y-3">
-            {chit.members.map((m, idx) => (
-              <li key={idx} className="flex justify-between items-center text-sm p-2 rounded-lg hover:bg-gray-50">
-                <span className="font-mono text-gray-700">
-                  {m.slice(0, 6)}...{m.slice(-4)}
-                  {m === address && <span className="ml-2 bg-gray-200 text-xs px-2 py-1 rounded-full">You</span>}
-                </span>
-                <span className="text-green-600 font-medium text-xs">
-                  {/* Mock status */}
-                  {idx === 0 ? 'Paid' : 'Pending'}
-                </span>
-              </li>
-            ))}
+            {chit.members.map((m, idx) => {
+              const hasPaid = !!contributions[m];
+              return (
+                <li key={idx} className="flex justify-between items-center text-sm p-2 rounded-lg hover:bg-gray-50">
+                  <span className="font-mono text-gray-700">
+                    {m.slice(0, 6)}...{m.slice(-4)}
+                    {m === address && <span className="ml-2 bg-gray-200 text-xs px-2 py-1 rounded-full">You</span>}
+                  </span>
+                  <span className={hasPaid ? "text-green-600 font-medium text-xs font-semibold" : "text-amber-500 font-medium text-xs font-semibold"}>
+                    {hasPaid ? 'Paid' : 'Pending'}
+                  </span>
+                </li>
+              );
+            })}
           </ul>
         </div>
       </div>
