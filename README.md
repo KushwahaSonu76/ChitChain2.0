@@ -128,16 +128,16 @@ Non-crypto users are welcomed with tooltips guiding them to install **Freighter*
 
 | Wallet Address | Transaction Hash | Action |
 | :--- | :--- | :--- |
-| `GD7D...3S2A` | [5fa1...0db2](https://stellar.expert/explorer/testnet/tx/5fa1d7c92b210db29a39775fa1d7c92b210db29a3977a1d7c92b210db29a3977) | Created Chit Group |
-| `GC2O...A7PL` | [e01d...93d2](https://stellar.expert/explorer/testnet/tx/e01d3cb48dfc93d29a39775fa1d7c92b210db29a3977a1d7c92b210db29a3977) | Contributed Round 1 |
-| `GB3W...K9PQ` | [f18a...88cc](https://stellar.expert/explorer/testnet/tx/f18a7c293b2188cca39775fa1d7c92b210db29a3977a1d7c92b210db29a3977) | Contributed Round 1 |
-| `GD4M...8VZX` | [a109...fc11](https://stellar.expert/explorer/testnet/tx/a109d7c92b21fc119a39775fa1d7c92b210db29a3977a1d7c92b210db29a3977) | Contributed Round 1 |
-| `GAA9...2QWX` | [99d2...bc1a](https://stellar.expert/explorer/testnet/tx/99d2d7c92b21bc1a9a39775fa1d7c92b210db29a3977a1d7c92b210db29a3977) | Contributed Round 2 |
-| `GD6P...L0PZ` | [d502...ff1a](https://stellar.expert/explorer/testnet/tx/d502d7c92b21ff1a9a39775fa1d7c92b210db29a3977a1d7c92b210db29a3977) | Contributed Round 2 |
-| `GB2Y...Z4KL` | [82ba...ac3b](https://stellar.expert/explorer/testnet/tx/82bad7c92b21ac3ba39775fa1d7c92b210db29a3977a1d7c92b210db29a3977) | Disbursed Round 1 |
-| `GC7R...V4NM` | [c218...ef92](https://stellar.expert/explorer/testnet/tx/c218d7c92b21ef929a39775fa1d7c92b210db29a3977a1d7c92b210db29a3977) | Contributed Round 3 |
-| `GD3X...H6TY` | [b01a...dd0a](https://stellar.expert/explorer/testnet/tx/b01ad7c92b21dd0a9a39775fa1d7c92b210db29a3977a1d7c92b210db29a3977) | Contributed Round 3 |
-| `GAA2...9IKJ` | [a991...ab01](https://stellar.expert/explorer/testnet/tx/a991d7c92b21ab019a39775fa1d7c92b210db29a3977a1d7c92b210db29a3977) | Disbursed Round 2 |
+| `GDPHORC6UKASNY7WMIW23IOUA2LY5SNENO367O4R6WV7Q7GNJW3WWI27` | [274631002721...](https://stellar.expert/explorer/testnet/tx/274631002721f8fa7b7b9e89c3200d7ce00ac2170288e51486b9a8fb68982f51) | Created Chit Group |
+| `GBH45ZRZUNV5RIMDF4IQLSJWFIFEX5KPRJSYEPV5QZCPE6XP77BCSPWD` | [f63926dfe2b2...](https://stellar.expert/explorer/testnet/tx/f63926dfe2b298bcaeb36a03fc9122f3118d7129d7a04d4673be13454e245cb7) | Contributed Round 1 |
+| `GASTVZNEON3OSJ5R5YOELNWY7O622OYZ74XWOEQJOUAFPFPDBWEM45US` | [d66cdd3c24bd...](https://stellar.expert/explorer/testnet/tx/d66cdd3c24bdeabcab5b966d29861f389f8b464188f5f3ee482fb6cecd8ba50f) | Contributed Round 1 |
+| `GASTVZNEON3OSJ5R5YOELNWY7O622OYZ74XWOEQJOUAFPFPDBWEM45US` | [e1940c9f321a...](https://stellar.expert/explorer/testnet/tx/e1940c9f321a60b02dc2e0e08f43beb535973166a4d7bb1a38cb9d8217458192) | Contributed Round 2 |
+| `GBAJGNCG4MVPDMJBG6YVEKAW7EFUEO3NYBCSWYD7RB7IY32LI2GXFIWV` | [a38cde30c357...](https://stellar.expert/explorer/testnet/tx/a38cde30c35741ced9f27c394dd1c223f1fe00e7385367211d2046a611714261) | Contributed Round 2 |
+| `GDPHORC6UKASNY7WMIW23IOUA2LY5SNENO367O4R6WV7Q7GNJW3WWI27` | [cb48e81bbeb4...](https://stellar.expert/explorer/testnet/tx/cb48e81bbeb41c867d1a2291df032ad4bfb2b7acbf82b6dad82a41401a1fcc4b) | Contributed Round 2 |
+| `GDPXTW53CBUNOFQ5LJ67KKIOMRKKX26JWI53NUJNP2NRPDATMVUGD6AK` | [543ca271586e...](https://stellar.expert/explorer/testnet/tx/543ca271586e788ecd59e76da65a8e4e1869a83299b1df25359f0fb10e4fa745) | Contributed Round 1 |
+| `GBUTBHM2PAGZ2HA6HJIGP7PTRG63IQY5BTZENCBS5NIEQ7KCLMH5DOG6` | [05d38ec99282...](https://stellar.expert/explorer/testnet/tx/05d38ec992823b5b1fba306d7ab3472f2281d15fc877a5dfe5d14fe0f44e30e7) | Contributed Round 1 |
+| `GAH6NCFLQNLDSAKPDKKZ4H4XDHYQUGMHFZFMVIKYG4J2CLQNQGFJDOS4` | [cecadfca2c85...](https://stellar.expert/explorer/testnet/tx/cecadfca2c85612435bdbd646ac5c5964d0b324ac902b4055ec2fdd33935ff8c) | Disbursed Round 1 |
+| `GCGITHGSCUZU2W2YQ7QPSRTKYZOXKAQSG32KKMPN6L2SYBYL4YAI3LWX` | [642a692aead3...](https://stellar.expert/explorer/testnet/tx/642a692aead3a632a0fc3c4e140864408a938731a98b8a4f452b3bdbf42a2265) | Disbursed Round 2 |
 
 *Users were sourced directly from the RiseIn community, WhatsApp group chats, and Stellar Discord channels.*
 
