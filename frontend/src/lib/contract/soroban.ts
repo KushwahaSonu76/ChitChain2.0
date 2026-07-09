@@ -3,7 +3,7 @@ import { StellarWalletsKit } from '@creit.tech/stellar-wallets-kit';
 
 export const RPC_URL = 'https://soroban-testnet.stellar.org';
 export const NETWORK_PASSPHRASE = 'Test SDF Network ; September 2015';
-export const CONTRACT_ID = import.meta.env.VITE_CONTRACT_ID || '';
+export const CONTRACT_ID = import.meta.env.VITE_CONTRACT_ID || 'CAM2SW6NSRA2CXP34H5G6Y2EIUOYENP3NAYAD76X3ZHG72NUJO63XPAP';
 
 const server = new rpc.Server(RPC_URL);
 
