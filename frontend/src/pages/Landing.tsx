@@ -9,7 +9,7 @@ const Landing = () => {
     <div className="flex flex-col items-center justify-center py-12 space-y-16">
       <div className="text-center max-w-3xl space-y-6">
         <h1 className="text-5xl font-extrabold text-stellar tracking-tight">
-          Trustless Savings Groups on Stellar
+          Save Together, Trustlessly
         </h1>
         <p className="text-xl text-gray-600">
           ChitChain brings the traditional rotating savings and credit association (ROSCA) model to the blockchain. 
