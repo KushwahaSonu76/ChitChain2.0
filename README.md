@@ -144,7 +144,8 @@ Non-crypto users are welcomed with tooltips guiding them to install **Freighter*
 ---
 
 ## 9. Feedback Summary
-We collected 10 real responses via the in-app feedback widget stored in Supabase:
+We collected 10 real user responses via Google Forms and the in-app feedback widget:
+- **Public Feedback Database**: [View Google Sheets Responses](https://docs.google.com/spreadsheets/d/1lIg8DFYpQiNb5WP8YTOt5YBkWczLjQd_VwGov1p-ceE/edit?usp=sharing)
 - **Onboarding Experience**: 8/10 users reported that the Freighter setup and Friendbot links made starting extremely straightforward.
 - **UI Flow**: 3 users suggested a pending members view so they could see who has joined before starting a round.
 - **Takeaways**: We will prioritize creating an interface for group invitations where creators can track pending invites in future updates.
