@@ -174,7 +174,7 @@ We collected 10 real responses via the in-app feedback widget stored in Supabase
 ---
 
 ## 13. Demo Video
-- **Video Walkthrough**: [Watch the Demo Video](https://www.youtube.com/watch?v=dQw4w9WgXcQ)
+- **Video Walkthrough**: [Watch the Demo Video](https://youtu.be/PIwo9TdFXRE)
 
 ---
 
