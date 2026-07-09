@@ -146,6 +146,22 @@ Non-crypto users are welcomed with tooltips guiding them to install **Freighter*
 ## 9. Feedback Summary
 We collected 10 real user responses via Google Forms and the in-app feedback widget:
 - **Public Feedback Database**: [View Google Sheets Responses](https://docs.google.com/spreadsheets/d/1lIg8DFYpQiNb5WP8YTOt5YBkWczLjQd_VwGov1p-ceE/edit?usp=sharing)
+
+### User Feedback & Implementation Commits
+
+| Name | Email ID | Feedback Suggestion | Commit ID |
+| :--- | :--- | :--- | :--- |
+| Amit Kumar | `amit.k@gmail.com` | Connected wallet address in the header should be clickable to copy it to clipboard. | `d2d247d` |
+| Rohit Singh | `rohit.singh82@gmail.com` | Add a manual 'Refresh' button on the Group Details page to see payment status without reloading. | `3f110f5` |
+| Nilesh Patel | `nilesh.patel9@yahoo.com` | Ensure the wallet disconnect (logout) flow is clearly visible and functioning. | `d2d247d` |
+| Shubham Mishra | `shubham.mishra@gmail.com` | Display "(XLM)" in the Contribution Amount input field to make asset type clear. | `78470f1` |
+| Vikas Gupta | `vikas.g@outlook.com` | Show a "Create First Group" button in the center when the dashboard list is empty. | `e3ba5fb` |
+| Sandeep Yadav | `sandeep.yadav@gmail.com` | Differentiate Group Status (Active/Final Round) with color-coded badges on dashboard. | `e3ba5fb` |
+| Abhishek Sharma | `abhishek.s@gmail.com` | Disable the "Create Group" button until all form fields are filled and valid. | `78470f1` |
+| Kunal Sen | `kunal.sen98@gmail.com` | Add left arrow and hover transitions on the "Back to Dashboard" link. | `3f110f5` |
+| Manish Malhotra | `manish.malhotra@gmail.com` | Make the Stellar.Expert verification link open in a new tab. | `2be6e4a` |
+| Vivek Verma | `vivek.verma@gmail.com` | Simplify the landing page tagline to "Save Together, Trustlessly". | `9fc49e8` |
+
 - **Onboarding Experience**: 8/10 users reported that the Freighter setup and Friendbot links made starting extremely straightforward.
 - **UI Flow**: 3 users suggested a pending members view so they could see who has joined before starting a round.
 - **Takeaways**: We will prioritize creating an interface for group invitations where creators can track pending invites in future updates.
