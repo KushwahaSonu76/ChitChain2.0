@@ -57,7 +57,13 @@ const Dashboard = () => {
             <div key={chit.id} className="bg-white p-6 rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
               <div className="flex justify-between items-start mb-4">
                 <h3 className="text-xl font-bold text-stellar">Group #{chit.id}</h3>
-                <span className="bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full font-medium">Active</span>
+                <span className={
+                  chit.current_round === chit.total_rounds
+                    ? "bg-amber-100 text-amber-800 text-xs px-2 py-1 rounded-full font-semibold"
+                    : "bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full font-semibold"
+                }>
+                  {chit.current_round === chit.total_rounds ? 'Final Round' : 'Active'}
+                </span>
               </div>
               <div className="space-y-2 mb-6">
                 <div className="flex justify-between text-sm">
@@ -76,9 +82,12 @@ const Dashboard = () => {
           ))}
         </div>
       ) : (
-        <div className="bg-white p-12 rounded-xl border border-gray-100 text-center space-y-4">
+        <div className="bg-white p-12 rounded-xl border border-gray-100 text-center space-y-4 flex flex-col items-center">
           <h3 className="text-xl font-medium text-gray-900">No active groups</h3>
-          <p className="text-gray-500 max-w-md mx-auto">You aren't a member of any Chit Groups yet. Create a new one or ask a friend for an invite link.</p>
+          <p className="text-gray-500 max-w-md mx-auto mb-2">You aren't a member of any Chit Groups yet. Create a new one or ask a friend for an invite link.</p>
+          <Link to="/create" className="bg-accent hover:bg-accent/90 text-white px-6 py-2.5 rounded-lg font-medium transition-colors">
+            Create First Group
+          </Link>
         </div>
       )}
     </div>
