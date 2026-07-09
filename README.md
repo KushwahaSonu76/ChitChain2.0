@@ -165,9 +165,9 @@ We collected 10 real responses via the in-app feedback widget stored in Supabase
 
 ## 12. Screenshots
 ### Product UI (Desktop)
-![product-ui](./screenshots/product-ui.png)
+![product-ui](./image.png)
 ### Mobile Responsive Design
-![mobile](./screenshots/mobile-responsive.png)
+![mobile](./image-1.png)
 ### Analytics/Monitoring Dashboard
 ![analytics](./screenshots/analytics-dashboard.png)
 

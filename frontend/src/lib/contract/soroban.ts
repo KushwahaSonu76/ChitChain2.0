@@ -99,7 +99,7 @@ export async function createChitTx(
   const operation = contract.call(
     "create_chit",
     membersVec,
-    nativeToScVal(amount, { type: 'i128' }),
+    nativeToScVal(BigInt(Math.floor(amount)), { type: 'i128' }),
     nativeToScVal(rounds, { type: 'u32' }),
     new Address(token).toScVal()
   );
@@ -188,9 +188,8 @@ export async function getChitStatus(chitId: number): Promise<ChitStatus> {
 
 export async function getMemberChits(address: string): Promise<ChitStatus[]> {
   const chits: ChitStatus[] = [];
-  let id = 1;
-  // Scan contracts up to 20 to avoid long loading times for MVP demo
-  for (let i = 1; i <= 20; i++) {
+  // Scan contracts from 0 up to 20 to avoid long loading times for MVP demo
+  for (let i = 0; i < 20; i++) {
     try {
       const status = await getChitStatus(i);
       if (status.members.includes(address)) {
