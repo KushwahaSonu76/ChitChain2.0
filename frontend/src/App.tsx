@@ -53,7 +53,14 @@ const Navigation = () => {
           <div className="flex items-center">
             {address ? (
               <div className="flex items-center space-x-4">
-                <span className="text-sm text-gray-600 bg-gray-100 px-3 py-1 rounded-full">
+                <span 
+                  onClick={() => {
+                    navigator.clipboard.writeText(address);
+                    alert("Wallet address copied to clipboard!");
+                  }}
+                  className="text-sm text-gray-600 bg-gray-100 px-3 py-1 rounded-full cursor-pointer hover:bg-gray-200 transition-colors"
+                  title="Click to copy address"
+                >
                   {address.slice(0, 4)}...{address.slice(-4)}
                 </span>
                 <button
