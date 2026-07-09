@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { useWallet } from '../lib/wallet/WalletContext';
-import { getChitStatus, contributeTx, disburseTx, getRoundContributions, type ChitStatus } from '../lib/contract/soroban';
+import { getChitStatus, contributeTx, disburseTx, getRoundContributions, CONTRACT_ID, type ChitStatus } from '../lib/contract/soroban';
 import posthog from 'posthog-js';
 import { submitFeedback } from '../lib/supabase';
 
@@ -220,6 +220,17 @@ const ViewChit = () => {
         >
           {feedbackSubmitting ? 'Submitting...' : 'Submit Feedback'}
         </button>
+      </div>
+
+      <div className="text-center pt-4 border-t border-gray-100 mt-8">
+        <a 
+          href={`https://stellar.expert/explorer/testnet/contract/${CONTRACT_ID}`}
+          target="_blank" 
+          rel="noopener noreferrer" 
+          className="text-xs text-gray-400 hover:text-gray-600 transition-colors inline-flex items-center space-x-1"
+        >
+          <span>🌐 Verify Contract on Stellar.Expert</span> <span>↗</span>
+        </a>
       </div>
     </div>
   );
