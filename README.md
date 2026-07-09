@@ -151,16 +151,15 @@ We collected 10 real user responses via Google Forms and the in-app feedback wid
 
 | Name | Email ID | Feedback Suggestion | Commit ID |
 | :--- | :--- | :--- | :--- |
-| Amit Kumar | `amit.k@gmail.com` | Connected wallet address in the header should be clickable to copy it to clipboard. | `d2d247d` |
-| Rohit Singh | `rohit.singh82@gmail.com` | Add a manual 'Refresh' button on the Group Details page to see payment status without reloading. | `3f110f5` |
-| Nilesh Patel | `nilesh.patel9@yahoo.com` | Ensure the wallet disconnect (logout) flow is clearly visible and functioning. | `d2d247d` |
-| Shubham Mishra | `shubham.mishra@gmail.com` | Display "(XLM)" in the Contribution Amount input field to make asset type clear. | `78470f1` |
-| Vikas Gupta | `vikas.g@outlook.com` | Show a "Create First Group" button in the center when the dashboard list is empty. | `e3ba5fb` |
-| Sandeep Yadav | `sandeep.yadav@gmail.com` | Differentiate Group Status (Active/Final Round) with color-coded badges on dashboard. | `e3ba5fb` |
-| Abhishek Sharma | `abhishek.s@gmail.com` | Disable the "Create Group" button until all form fields are filled and valid. | `78470f1` |
-| Kunal Sen | `kunal.sen98@gmail.com` | Add left arrow and hover transitions on the "Back to Dashboard" link. | `3f110f5` |
-| Manish Malhotra | `manish.malhotra@gmail.com` | Make the Stellar.Expert verification link open in a new tab. | `2be6e4a` |
-| Vivek Verma | `vivek.verma@gmail.com` | Simplify the landing page tagline to "Save Together, Trustlessly". | `9fc49e8` |
+| Rishi Sharma | `rishi55443322@gmail.com` | Hey, clicking the connected wallet address in the navigation bar should copy it to the clipboard so we don't have to copy it manually | `d2d247d` |
+| Ranjan Mehta | `ranjanmehta980@gmail.com` | Can you add a manual 'Refresh' button on the Group Details page? It's annoying to refresh the whole browser every time someone makes a contribution. | `3f110f5` |
+| Nitin Kapoor | `nitinkapoor009988@gmail.com` | The wallet connection flow is a bit confusing. When the wallet is connected, please show a clear LogOut/Disconnect button or icon next to the address in the header so we can disconnect | `d2d247d` |
+| Abhishek Kumar | `abhishek086038@gmail.com` | On the Create Group page, the contribution amount input box should clearly show it is in XLM (e.g., 'Contribution Amount (XLM)') | `78470f1` |
+| Suraj Kumar | `suurajku@gmail.com` | If I don't have any groups yet on the dashboard, don't just show a message. Show a big 'Create First Group' button in the center so new users can get started immediately | `e3ba5fb` |
+| Bhole Shankar | `tandavibhole@gmail.com` | In the dashboard group list, color-code the group status (e.g., Green for Active, Orange for Pending/Finished) to make it look premium | `e3ba5fb` |
+| Riya Sharma | `riya83738shar@gmail.com` | On the Create Group page, the 'Create Group' button should be disabled until the user fills in the name, amount, and at least one member address, to avoid sending empty/failing transactions | `78470f1` |
+| Anish Kumar | `manithanks754@gmail.com` | The 'Back to Dashboard' link on the details page should have a left arrow (←) and a nice hover color effect to make navigation feel smoother | `3f110f5` |
+| Shweta Sharma | `shwetasharma44044@gmail.com` | All external links (like Stellar.Expert explorer links) should open in a new tab (target='_blank') so it doesn't close our app. | `2be6e4a` |
 
 - **Onboarding Experience**: 8/10 users reported that the Freighter setup and Friendbot links made starting extremely straightforward.
 - **UI Flow**: 3 users suggested a pending members view so they could see who has joined before starting a round.
