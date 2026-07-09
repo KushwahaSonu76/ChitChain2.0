@@ -4,10 +4,8 @@ import Landing from './pages/Landing';
 import Dashboard from './pages/Dashboard';
 import CreateChit from './pages/CreateChit';
 import ViewChit from './pages/ViewChit';
-import { PostHogProvider } from 'posthog-js/react'
 import posthog from 'posthog-js'
 import * as Sentry from "@sentry/react";
-import { useEffect } from 'react';
 import { LogOut } from 'lucide-react';
 
 // Initialize Analytics (Requires real env variables for production)

@@ -73,7 +73,7 @@ async function signAndSubmit(pubKey: string, operation: any) {
   const response = await server.sendTransaction(signedTx);
 
   if (response.status === 'ERROR') {
-    throw new Error('Failed to submit transaction: ' + JSON.stringify(response.errorResultXdr));
+    throw new Error('Failed to submit transaction: ' + JSON.stringify((response as any).errorResultXdr || (response as any).errorResult || response));
   }
 
   // 7. Poll until transaction is permanently recorded in a ledger
@@ -81,7 +81,7 @@ async function signAndSubmit(pubKey: string, operation: any) {
 }
 
 export async function createChitTx(
-  kit: typeof StellarWalletsKit,
+  _kit: typeof StellarWalletsKit,
   pubKey: string,
   members: string[],
   amount: number,
@@ -108,7 +108,7 @@ export async function createChitTx(
 }
 
 export async function contributeTx(
-  kit: typeof StellarWalletsKit,
+  _kit: typeof StellarWalletsKit,
   pubKey: string,
   chitId: number,
   round: number
@@ -128,7 +128,7 @@ export async function contributeTx(
 }
 
 export async function disburseTx(
-  kit: typeof StellarWalletsKit,
+  _kit: typeof StellarWalletsKit,
   pubKey: string,
   chitId: number,
   round: number
