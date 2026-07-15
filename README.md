@@ -75,7 +75,7 @@ Analytics & Monitoring (PostHog & Sentry)
 ---
 
 ## 6. Live Demo
-- **Live Deployment**: [https://chit-chain2-0.vercel.app/l.app]https://chit-chain2-0.vercel.app/
+- **Live Deployment**: https://chit-chain2-0.vercel.app/
 
 ---
 
